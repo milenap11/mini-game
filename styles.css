@@ -50,25 +50,127 @@ h1 {
     text-align: center;
     font-size: 65px;
     font-family: 'Londrina Shadow';
-    margin-bottom: 70px;
+    margin-bottom: 0px;
     
 }
 
-/*.grid {
-    border: 1px solid;
-    height: 120px;
-    width: 140px;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
+h2 {
+    text-align: center;
+    font-size: 50px;
+    margin-bottom: 40px;
+    font-family: 'Londrina Shadow', cursive;
 }
 
-.grid div {
-    height: 20px;
-    width: 20px;
-    background-color: blue;
-}*/
+h3 {
+    font-size: 25px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+/* Contact form */
+#contact {
+    height: 70vh;
+    margin-bottom: 50px;
+}
+
+.banner {
+    text-align: center;
+    background-color: #ffffff;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    font-size: 20px;
+}
+ 
+.banner img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Contact form styles */
+.contact-form {
+    padding: 40px 0;
+    margin: 0 10px;
+}
+ 
+.form-container {
+    max-width: 40%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+ 
+.contact-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+ 
+.form-group {
+    margin-bottom: 20px;
+}
+ 
+.form-container label {
+    display:block;
+    font-weight: bold;
+}
+
+.form-container input, textarea{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    resize: vertical;
+}
+
+.submit-button {
+    padding: 10px 20px;
+    background-color: black;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* Modal */
+#modal {
+    display: none;
+    background-color: rgba(0, 0, 0, 0.4);
+    position: fixed; /* absolute? */
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 1; /* stacks elements, in this case on top of button - default = 0
+	/*This puts our modal in front of the body (which has a default z-index setting of `0`*/
+	overflow: auto;
+	/*If overflow is clipped, a scroll-bar should be added to see the rest of the content*/
+}
+
+#modal-textbox {
+	background-color: white;
+	height: 350px;
+	width: 550px;
+	border-radius: 10px;
+    margin: 150px auto;
+    box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.2);
+    padding: 2%;
+    line-height: 120%;
+
+}
+
+.modal-buttons {
+    padding: 8px 16px;
+    background-color: lightgray;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 24px;
+	cursor: pointer;
+    border-radius: 100%;
+}
 
 body {
     height: 100vh;
@@ -79,16 +181,38 @@ body {
     font-family: helvetica, sans-serif;
 }
 
+header {
+    text-align: right;
+    
+}
+
+/* Game */
 #board {
     display: grid;
     grid-template-columns: repeat(7, 10vmin);
     grid-template-rows: repeat(6, 10vmin);
     gap: 1vmin;
-    margin-top: -3vmin;
+    /*margin-top: -3vmin;*/
     background-color: blue;
+    border: 10px solid navy; 
 }
 
-button {
+#playagain {
     padding: 5px 10px;
     margin-top: 20px;
+}
+
+#board div {
+    background-color: white;
+    border-radius: 100%;
+    margin: 5px;
+    border: 5px solid navy;
+}
+
+.playerOne {
+    background-color: red;
+}
+
+.playerTwo {
+    background-color: yellow;
 }

@@ -11,11 +11,11 @@
 <body>
     
     <nav>
-        <div><a href="#intro">Milena Pupillo</a></div>
-        <div><a href="#projects">Projects</a></div>
-        <div><a href="#about">About</a></div>
+        <div><a href="/projects/portfolio/index.html">Milena Pupillo</a></div>
+        <div><a href="/projects/portfolio/index.html#projects">Projects</a></div>
+        <div><a href="/projects/portfolio/index.html#about">About</a></div>
         <div><a href="https://drive.google.com/file/d/10515QFjvYLJ9qv9gKTJ2y3SK9PkLNEQ4/view?usp=sharing" target="_blank">Resume</a></div>
-        <div><a href="#contact" class="modal-buttons" id="open-modal">Contact</a></div>
+        <div><a href="#contact" id="open-modal">Contact</a></div>
         <div><a href="https://www.linkedin.com/in/milenapupillo/" target="_blank">
             <ion-icon name="logo-linkedin"></ion-icon>
             </a></div>
@@ -24,54 +24,83 @@
             </a></div>   
     </nav>
     
+    
     <h1>CONNECT 4</h1>
+    <h3>The current Player is: Player <span id="current-player"></span></h3>
 
     <section id="board">
-    <div id="1"></div>
-    <div id="2"></div>
-    <div id="3"></div>
-    <div id="4"></div>
-    <div id="5"></div>
-    <div id="6"></div>
-    <div id="7"></div>
-    <div id="8"></div>
-    <div id="9"></div>
-    <div id="10"></div>
-    <div id="11"></div>
-    <div id="12"></div>
-    <div id="13"></div>
-    <div id="14"></div>
-    <div id="15"></div>
-    <div id="16"></div>
-    <div id="17"></div>
-    <div id="18"></div>
-    <div id="19"></div>
-    <div id="20"></div>
-    <div id="21"></div>
-    <div id="22"></div>
-    <div id="23"></div>
-    <div id="24"></div>
-    <div id="25"></div>
-    <div id="26"></div>
-    <div id="27"></div>
-    <div id="28"></div>
-    <div id="29"></div>
-    <div id="30"></div>
-    <div id="31"></div>
-    <div id="32"></div>
-    <div id="33"></div>
-    <div id="34"></div>
-    <div id="35"></div>
-    <div id="36"></div>
-    <div id="37"></div>
-    <div id="38"></div>
-    <div id="39"></div>
-    <div id="40"></div>
-    <div id="41"></div>
-    <div id="42"></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
     </section>
     
-    <button>PLAY AGAIN?</button>
+    <button id="playagain">PLAY AGAIN?</button>
+
+    <div id="modal">    
+        <div class="form-container">
+                <header>
+                    <button class="modal-buttons" id="close" href="#">x</button></header>
+            <h2>Contact</h2>
+            
+            <p class="banner">You can email me at <strong>milenapupillo@gmail.com</strong> or submit the following form.</p>
+
+            <form action="#" method="POST">
+                <label for="name">Name: </label>
+                <input type="text" id="name" name="name" required>
+ 
+                <label for="email">Email: </label>
+                <input type="email" id="email" name="email" required>
+ 
+                <label for="phone">Phone: </label>
+                <input type="tel" id="phone" name="phone">
+ 
+                <label for="message">Message: </label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+ 
+                <button type="submit" class="submit-button">Submit</button>
+
+                
+            </form>
+    </div>
     
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
