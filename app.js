@@ -15,56 +15,55 @@ const closeModal = () => modal.style.display = 'none';
 
 closeBtn.addEventListener('click', closeModal)
 
-
-//setTimeout(openModal, 5000);
-
 // Game 
 
-// Selectors
-/*document.addEventListener('DOMContentLoaded', () => {*/
-    const squares = document.querySelectorAll('.cell');
-    const winner = document.querySelector('#winner');
-    const displayCurrentPlayer = document.querySelector('#current-player');
-    const reset = document.querySelector('#play');
-    console.log(squares)
+// HTML that will be manipulated
+const squares = document.querySelectorAll('.cell');
+const winner = document.querySelector('#winner');
+const displayCurrentPlayer = document.querySelector('#current-player');
+const reset = document.querySelector('#play');
 
-// Set game logic
+// Indicate the current player
 let currentPlayer = "1"
+displayCurrentPlayer.innerText = "1"
 
+// Add an event listener to each cell
 for (let i = 0; i < squares.length; i++) { 
     const currentCell = squares[i]
     
-    if (currentPlayer === "1") { 
+    currentCell.onclick = () => { 
+        // Step 1: check which cells are taken and empty when a column is clicked
+        const currentCol = currentCell.getAttribute("data-col") 
+        const allColCells = document.querySelectorAll(`div[data-col="${currentCol}"]`)
+        const emptyCells = document.querySelectorAll(`.empty[data-col="${currentCol}"]`)
+        const nextCell = emptyCells[emptyCells.length - 1]
 
-     
-    //console.log(squares[i] + (i + 1)) 
-    currentCell.onclick = () => {
-        const nextRowCell = squares[i + 7]
-        if (nextRowCell.classList.contains('taken')) {
-        currentCell.classList.add('taken')
-        currentCell.classList.add('playerOne')
-        currentPlayer = "2"
-        displayCurrentPlayer.innerHTML = currentPlayer
-        console.log(currentPlayer)
-        }  
-    }
-} 
-if (currentPlayer === "2") { 
-
-     
-    //console.log(squares[i] + (i + 1)) 
-    currentCell.onclick = () => {
-        const nextRowCell = squares[i + 7]
-        if (nextRowCell.classList.contains('taken')) {
-        currentCell.classList.add('taken')
-        currentCell.classList.add('playerOne')
-        currentPlayer = "1"
-        displayCurrentPlayer.innerHTML = currentPlayer
-        console.log(currentPlayer)
-        }  
-    }
-} 
+        // Step 2: update the column so that the next cell is taken
+        if (0 < emptyCells.length && emptyCells.length < 6) {
+            nextCell.classList.add('taken')
+            nextCell.classList.remove("empty")
+        } else if (emptyCells.length === 0) {
+            alert("this column is full! Choose something else")
+        } else {
+            allColCells[5].classList.add('taken')
+            nextCell.classList.remove("empty")
+        }
+        
+        // Step 3: place the chip in the correct cell, indicate who plays next  
+        if (currentPlayer === "1") {
+            console.log(nextCell.classList)
+            nextCell.classList.add("playerOne")
+            currentPlayer = "2"
+            displayCurrentPlayer.innerText = "2"
+        } else {
+            nextCell.classList.add("playerTwo")
+            currentPlayer = "1"
+            displayCurrentPlayer.innerText = "1"
+        }
+    }   
 }
+
+// Winning logic
 
 
 
