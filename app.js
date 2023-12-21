@@ -16,7 +16,7 @@ const closeModal = () => modal.style.display = 'none';
 closeBtn.addEventListener('click', closeModal)
 
 
-setTimeout(openModal, 5000);
+//setTimeout(openModal, 5000);
 
 // Game 
 
