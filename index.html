@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
     <link href='https://fonts.googleapis.com/css?family=Londrina+Shadow' rel='stylesheet' type='text/css'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&family=Merriweather&family=Poiret+One&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connect 4</title>
@@ -11,11 +14,11 @@
 <body>
     
     <nav>
-        <div><a href="https://milenap11.github.io/portfolio/">Milena Pupillo</a></div>
-        <div><a href="https://milenap11.github.io/portfolio/#projects">Projects</a></div>
-        <div><a href="https://milenap11.github.io/portfolio/#about">About</a></div>
-        <div><a href="https://drive.google.com/file/d/10515QFjvYLJ9qv9gKTJ2y3SK9PkLNEQ4/view?usp=sharing" target="_blank">Resume</a></div>
-        <div><a href="#contact" id="open-modal">Contact</a></div>
+        <div><a href="#intro">Milena Pupillo</a></div>
+        <div><a href="#projects"><b>PROJECTS</b></a></div>
+        <div><a href="#about"><b>ABOUT</b></a></div>
+        <div><a href="https://drive.google.com/file/d/10515QFjvYLJ9qv9gKTJ2y3SK9PkLNEQ4/view?usp=sharing" target="_blank"><b>RESUME</b></a></div>
+        <div><a href="#contact" id="open-modal"><b>CONTACT</b></a></div>
         <div><a href="https://www.linkedin.com/in/milenapupillo/" target="_blank">
             <ion-icon name="logo-linkedin"></ion-icon>
             </a></div>
@@ -28,53 +31,55 @@
     <h3>The current Player is: <span id="current-player"></span></h3>
 
     <div id="board">
-    <div class="cell empty" data-row="A" data-col="1" ></div>
-    <div class="cell empty" data-row="A" data-col="2"></div>
-    <div class="cell empty" data-row="A" data-col="3"></div>
-    <div class="cell empty" data-row="A" data-col="4"></div>
-    <div class="cell empty" data-row="A" data-col="5"></div>
-    <div class="cell empty" data-row="A" data-col="6" ></div>
-    <div class="cell empty" data-row="A" data-col="7"></div>
+      
+        <div class="cell empty" id="r0c5"></div>
+        <div class="cell empty" id="r1c5"></div>
+        <div class="cell empty" id="r2c5"></div>
+        <div class="cell empty" id="r3c5"></div>
+        <div class="cell empty" id="r4c5"></div>
+        <div class="cell empty" id="r5c5"></div>
+        <div class="cell empty" id="r6c5"></div>
 
-    <div class="cell empty" data-row="B" data-col="1"></div>
-    <div class="cell empty" data-row="B" data-col="2"></div>
-    <div class="cell empty" data-row="B" data-col="3"></div>
-    <div class="cell empty" data-row="B" data-col="4"></div>
-    <div class="cell empty" data-row="B" data-col="5"></div>
-    <div class="cell empty" data-row="B" data-col="6" ></div>
-    <div class="cell empty" data-row="B" data-col="7"></div>
+        <div class="cell empty" id="r0c4"></div>
+        <div class="cell empty" id="r1c4"></div>
+        <div class="cell empty" id="r2c4"></div>
+        <div class="cell empty" id="r3c4"></div>
+        <div class="cell empty" id="r4c4"></div>
+        <div class="cell empty" id="r5c4"></div>
+        <div class="cell empty" id="r6c4"></div>
 
-    <div class="cell empty" data-row="C" data-col="1"></div>
-    <div class="cell empty" data-row="C" data-col="2"></div>
-    <div class="cell empty" data-row="C" data-col="3"></div>
-    <div class="cell empty" data-row="C" data-col="4"></div>
-    <div class="cell empty" data-row="C" data-col="5"></div>
-    <div class="cell empty" data-row="C" data-col="6" ></div>
-    <div class="cell empty" data-row="C" data-col="7"></div>
+        <div class="cell empty" id="r0c3"></div>
+        <div class="cell empty" id="r1c3"></div>
+        <div class="cell empty" id="r2c3"></div>
+        <div class="cell empty" id="r3c3"></div>
+        <div class="cell empty" id="r4c3"></div>
+        <div class="cell empty" id="r5c3"></div>
+        <div class="cell empty" id="r6c3"></div>
 
-    <div class="cell empty" data-row="D" data-col="1"></div>
-    <div class="cell empty" data-row="D" data-col="2"></div>
-    <div class="cell empty" data-row="D" data-col="3"></div>
-    <div class="cell empty" data-row="D" data-col="4"></div>
-    <div class="cell empty" data-row="D" data-col="5"></div>
-    <div class="cell empty" data-row="D" data-col="6" ></div>
-    <div class="cell empty" data-row="D" data-col="7"></div>
+        <div class="cell empty" id="r0c2"></div>
+        <div class="cell empty" id="r1c2"></div>
+        <div class="cell empty" id="r2c2"></div>
+        <div class="cell empty" id="r3c2"></div>
+        <div class="cell empty" id="r4c2"></div>
+        <div class="cell empty" id="r5c2"></div>
+        <div class="cell empty" id="r6c2"></div>
 
-    <div class="cell empty" data-row="E" data-col="1"></div>
-    <div class="cell empty" data-row="E" data-col="2"></div>
-    <div class="cell empty" data-row="E" data-col="3"></div>
-    <div class="cell empty" data-row="E" data-col="4"></div>
-    <div class="cell empty" data-row="E" data-col="5"></div>
-    <div class="cell empty" data-row="E" data-col="6" ></div>
-    <div class="cell empty" data-row="E" data-col="7"></div>
+        <div class="cell empty" id="r0c1"></div>
+        <div class="cell empty" id="r1c1"></div>
+        <div class="cell empty" id="r2c1"></div>
+        <div class="cell empty" id="r3c1"></div>
+        <div class="cell empty" id="r4c1"></div>
+        <div class="cell empty" id="r5c1"></div>
+        <div class="cell empty" id="r6c1"></div>
 
-    <div class="cell empty" data-row="F" data-col="1"></div>
-    <div class="cell empty" data-row="F" data-col="2"></div>
-    <div class="cell empty" data-row="F" data-col="3"></div>
-    <div class="cell empty" data-row="F" data-col="4"></div>
-    <div class="cell empty" data-row="F" data-col="5"></div>
-    <div class="cell empty" data-row="F" data-col="6" ></div>
-    <div class="cell empty" data-row="F" data-col="7"></div>
+        <div class="cell empty" id="r0c0"></div>
+        <div class="cell empty" id="r1c0"></div>
+        <div class="cell empty" id="r2c0"></div>
+        <div class="cell empty" id="r3c0"></div>
+        <div class="cell empty" id="r4c0"></div>
+        <div class="cell empty" id="r5c0"></div>
+        <div class="cell empty" id="r6c0"></div>
+   
     </div>
     
     <button id="play">PLAY AGAIN?</button>

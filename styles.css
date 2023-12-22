@@ -38,8 +38,9 @@ nav > div:last-child {
   }
 
 nav > div {
-    font-size: 20px;
+    font-size: 16px;
     margin: 15px;
+    font-family: 'Inconsolata', monospace;
 }
 
 nav a:hover {
@@ -49,8 +50,9 @@ nav a:hover {
 h1 {
     text-align: center;
     font-size: 65px;
-    font-family: 'Londrina Shadow';
+    font-family: 'Inconsolata', monospace;
     margin-bottom: 0px;
+    color: red;
     
 }
 
@@ -58,14 +60,21 @@ h2 {
     text-align: center;
     font-size: 50px;
     margin-bottom: 40px;
-    font-family: 'Londrina Shadow', cursive;
+    font-family: 'Inconsolata', monospace;
+    
 }
 
 h3 {
     font-size: 25px;
     margin-bottom: 30px;
     margin-top: 30px;
+    font-family: 'Inconsolata', monospace;
 }
+
+ p {
+    font-family: 'Inconsolata', monospace;
+    
+ }
 
 /* Contact form */
 #contact {
@@ -78,13 +87,10 @@ h3 {
     background-color: #ffffff;
     margin: 0 auto;
     margin-bottom: 30px;
-    font-size: 20px;
+    font-size: 19px;
 }
  
-.banner img {
-    max-width: 100%;
-    height: auto;
-}
+
 
 /* Contact form styles */
 .contact-form {
@@ -200,6 +206,9 @@ header {
 #play {
     padding: 5px 10px;
     margin-top: 20px;
+    font-family: 'Inconsolata', monospace;
+    font-size: 24px;
+    
 }
 
 .cell {
