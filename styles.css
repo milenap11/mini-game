@@ -52,7 +52,7 @@ h1 {
     font-size: 65px;
     font-family: 'Inconsolata', monospace;
     margin-bottom: 0px;
-    color: red;
+    
     
 }
 
@@ -218,13 +218,13 @@ header {
     border: 5px solid navy;
 }
 
-.cell:hover {
+/*.cell:hover {
     background-color: lightblue;
-}
+}*/
 
-.hidden {
+/*.hidden {
     display: none;
-}
+}*/
 
 .playerOne {
     background-color: red;

@@ -24,6 +24,7 @@ const displayCurrentPlayer = document.querySelector('#current-player');
 const reset = document.querySelector('#play');
 const boardEl = document.getElementById('board');
 boardEl.addEventListener('click', handleClick);
+reset.addEventListener('click', init);
 let board; 
 let turn;
 let winningPlayer;
@@ -40,16 +41,17 @@ function init() {
     ]
     turn = 1
     winningPlayer = null
+    render()
 }
 init ()
 
 function handleClick(evt) {
     const row  = parseInt(evt.target.id[1])
     const col = board[row].indexOf(null)
-    if (col === -1) return
+    if (col === -1 || winningPlayer) return
     board[row][col] = turn
     turn *= -1
-    winningPlayer = checkBoard(row, col)
+    winningPlayer = checkWinner(row, col)
     render()
 }
 
@@ -64,28 +66,104 @@ function render() {
     } 
 }
 
-/*// Set winning logic
-function checkBoard(row, col) {
-   // Check horizontal win
-    for (row = 0; row < 6; row++) {
-        for (col = 0; col < 4; col++) {
-            if ()
-        }
-    }
+// Set winning logic
+function checkWinner(row, col) {
 
-   // Check vertical win
-   for (col = 0; col < 7; col++) {
-    for (row = 0; row < 3; row++) {
-        if ()
+    const player = board[row][col]
+    const winner = checkVerticalWinner(row, col, player) ||
+    checkHorizontalWinner(row, col, player) ||
+    checkLeftDiag(row, col, player) ||
+    checkRightDiag(row, col, player) ||
+    checkTie(row, col, player)
+    console.log(winner)
+    return winner
+}
+
+// Check vertical win
+function checkVerticalWinner(row, col, player) {
+    let count = 1
+    let startCol = col - 1
+    while (startCol >= 0 && board[row][startCol] === player ) {
+        count += 1
+        startCol -= 1
     }
-   // Check left-diagonal win
+    return count >= 4 ? player : null
+}
+
+// Check horizontal win
+function checkHorizontalWinner(row, col, player) {
+    let count = 1
+    let startRowRight = row + 1
+    let startRowLeft = row - 1
+    while (startRowLeft >= 0 && board[startRowLeft][col] === player ) {
+        count += 1
+        startRowLeft -= 1
+    }
+    while (startRowRight <= 6 && board[startRowRight][col] === player) {
+        count += 1
+        startRowRight += 1
+    }
+    return count >= 4 ? player : null
+}
+
+// Check left-diagonal win
+function checkLeftDiag(row, col, player) {
+        let count = 1
+        let startColLeft = col + 1
+        let startRowLeft = row - 1
+        while (startRowLeft >= 0 && startColLeft < 6 && board[startRowLeft][startColLeft] === player) {
+            count += 1
+            startColLeft += 1
+            startRowLeft -= 1
+        }
+        let startColRight = col - 1
+        let startRowRight = row + 1
+        
+        while (startColRight >= 0 && startRowRight < 7 && board[startRowRight][startColRight] === player ) {
+            count += 1
+            startColRight -= 1
+            startRowRight += 1
+        }
+        
+        return count >= 4 ? player : null
+}
+
+// Check right-diagonal win
+function checkRightDiag(row, col, player) {
+    let count = 1
+    let startColLeft = col - 1
+    let startRowLeft = row - 1
+    while (startRowLeft >= 0 && startColLeft >= 0 && board[startRowLeft][startColLeft] === player) {
+        count += 1
+        startColLeft -= 1
+        startRowLeft -= 1
+    }
+    let startColRight = col + 1
+    let startRowRight = row + 1
+    
+    while (startColRight <= 5 && startRowRight < 7 && board[startRowRight][startColRight] === player ) {
+        count += 1
+        startColRight += 1
+        startRowRight += 1
+    }
+    return count >= 4 ? player : null
+}
+
+// Check tie
+function checkTie() {
+    return board.flat().includes(null) ? null : "tie"
+}
+
+    
+
+
+  
    
 
-   // Check right-diagonal win
+   
+
+   
 
 
-   // Check tie
+ 
 
-    return null
-}
-}*/
