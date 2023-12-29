@@ -53,16 +53,13 @@ h1 {
     font-family: 'Inconsolata', monospace;
     margin-bottom: 25px;
     color: rgb(200, 1, 1);
-    
-    
 }
 
 h2 {
     text-align: center;
     font-size: 50px;
     margin-bottom: 40px;
-    font-family: 'Inconsolata', monospace;
-    
+    font-family: 'Inconsolata', monospace;  
 }
 
 h3 {
@@ -74,7 +71,6 @@ h3 {
 
  p {
     font-family: 'Inconsolata', monospace;
-    
  }
 
 /* Contact form */
@@ -90,8 +86,6 @@ h3 {
     margin-bottom: 30px;
     font-size: 19px;
 }
- 
-
 
 /* Contact form styles */
 .contact-form {
@@ -145,15 +139,13 @@ h3 {
 #modal {
     display: none;
     background-color: rgba(0, 0, 0, 0.4);
-    position: fixed; /* absolute? */
+    position: fixed;
 	top: 0;
 	left: 0;
 	height: 100%;
 	width: 100%;
-	z-index: 1; /* stacks elements, in this case on top of button - default = 0
-	/*This puts our modal in front of the body (which has a default z-index setting of `0`*/
+	z-index: 1;
 	overflow: auto;
-	/*If overflow is clipped, a scroll-bar should be added to see the rest of the content*/
 }
 
 #modal-textbox {
@@ -165,7 +157,6 @@ h3 {
     box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.2);
     padding: 2%;
     line-height: 120%;
-
 }
 
 .modal-buttons {
@@ -189,8 +180,7 @@ body {
 }
 
 header {
-    text-align: right;
-    
+    text-align: right; 
 }
 
 /* Game */
@@ -210,7 +200,6 @@ header {
     margin-top: 25px;
     font-family: 'Inconsolata', monospace;
     font-size: 24px;
-    
 }
 
 .cell {
@@ -223,10 +212,6 @@ header {
 /*.cell:hover {
     background-color: lightblue;
 }
-
-.hidden {
-    display: none;
-}*/
 
 /*.playerOne {
     background-color: red;
