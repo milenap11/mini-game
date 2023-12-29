@@ -19,15 +19,16 @@ closeBtn.addEventListener('click', closeModal)
 // Game
 // HTML that will be manipulated
 const squares = document.querySelectorAll('.cell');
-const winner = document.querySelector('#winner');
-const displayCurrentPlayer = document.querySelector('#current-player');
-const reset = document.querySelector('#play');
+const winner = document.querySelector('#winner'); //take this
+const displayCurrentPlayer = document.querySelector('#current-player'); //take this
+const reset = document.querySelector('#play'); //take this
 const boardEl = document.getElementById('board');
 boardEl.addEventListener('click', handleClick);
 reset.addEventListener('click', init);
 let board; 
 let turn;
 let winningPlayer;
+
 
 function init() {
     board  = [
@@ -154,7 +155,11 @@ function checkTie() {
     return board.flat().includes(null) ? null : "tie"
 }
 
-    
+// Restart
+/*reset.addEventListener('click', () => {
+    winner.style.display = 'none'
+    reset.style.display = 'block'
+})*/
 
 
   

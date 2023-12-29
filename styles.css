@@ -51,7 +51,8 @@ h1 {
     text-align: center;
     font-size: 65px;
     font-family: 'Inconsolata', monospace;
-    margin-bottom: 0px;
+    margin-bottom: 25px;
+    color: rgb(200, 1, 1);
     
     
 }
@@ -204,8 +205,9 @@ header {
 }
 
 #play {
-    padding: 5px 10px;
-    margin-top: 20px;
+    padding: 5px 18px;
+    border-radius: 5px;
+    margin-top: 25px;
     font-family: 'Inconsolata', monospace;
     font-size: 24px;
     
@@ -220,17 +222,20 @@ header {
 
 /*.cell:hover {
     background-color: lightblue;
-}*/
+}
 
-/*.hidden {
+.hidden {
     display: none;
 }*/
 
-.playerOne {
+/*.playerOne {
     background-color: red;
 }
 
 .playerTwo {
     background-color: yellow;
-}
+}*/
+
+
+
 
